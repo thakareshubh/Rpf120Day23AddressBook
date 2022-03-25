@@ -9,51 +9,59 @@ namespace AddressBookWelcomeMsg
         /// <summary>
         /// Creating Adress class with initialization
         /// </summary>
-        public class Address
+        public class NewPersoncontact
         {
             public string firstName, lastName, address, city, state, zip, phoneNumber, email;
+
+            public void NewPerson(int maxPerson)
+            {
+                for(int i = 1; i < maxPerson; i++)
+                {
+                    ArrayList addbook = new ArrayList();
+                    Console.WriteLine("Enter First Name ");
+                    firstName = Console.ReadLine();
+                    addbook.Add(firstName);
+
+                    Console.WriteLine("Enter Last Name");
+                    lastName = Console.ReadLine();
+                    addbook.Add(lastName);
+
+                    Console.WriteLine("Enter Address ");
+                    address = Console.ReadLine();
+                    addbook.Add(address);
+                    Console.WriteLine("Enter city");
+                    city = Console.ReadLine();
+                    addbook.Add(city);
+
+                    Console.WriteLine("Enter state");
+                    state = Console.ReadLine();
+                    addbook.Add(state);
+                    Console.WriteLine("Enter zip");
+                    zip = Console.ReadLine();
+                    addbook.Add(zip);
+                    Console.WriteLine("Enter Phone Number");
+                    phoneNumber = Convert.ToString(Console.ReadLine());
+                    addbook.Add(phoneNumber);
+                    Console.WriteLine("Enter Email");
+                    email = Convert.ToString(Console.ReadLine());
+                    addbook.Add(email);
+
+                    // New person information
+                    Console.WriteLine("\nGiven Detail Are : \n");
+                    Console.WriteLine("First Name = " + addbook[0] + "\nLastt Name = " + addbook[1] + "\nAddress = " + addbook[2] + "\nCity = " + addbook[3] + "\nState = " + addbook[4] + "\nZip = " + addbook[5] + "\nPhone Number = " + addbook[6] + "\nEmail = " + addbook[7]);
+
+                    Console.WriteLine("\n " + i + "person");
+                }
+            }
         }
         static void Main(string[] args)
         {
-          
+            
             Console.WriteLine("Welcome to Address Book Program");
-            Address a = new Address();
-
-            //store information in addbook
-            ArrayList addbook = new ArrayList();
-            Console.WriteLine("Enter First Name ");
-            a.firstName = Console.ReadLine();
-            addbook.Add(a.firstName);
-
-            Console.WriteLine("Enter Last Name");
-            a.lastName = Console.ReadLine();
-            addbook.Add(a.lastName);
-
-            Console.WriteLine("Enter Address ");
-            a.address = Console.ReadLine();
-            addbook.Add(a.address);
-            Console.WriteLine("Enter city");
-            a.city = Console.ReadLine();
-            addbook.Add(a.city);
-
-            Console.WriteLine("Enter state");
-            a.state = Console.ReadLine();
-            addbook.Add(a.state);
-            Console.WriteLine("Enter zip");
-            a.zip = Console.ReadLine();
-            addbook.Add(a.zip);
-            Console.WriteLine("Enter Phone Number");
-            a.phoneNumber = Convert.ToString(Console.ReadLine());
-            addbook.Add(a.phoneNumber);
-            Console.WriteLine("Enter Email");
-            a.email = Convert.ToString(Console.ReadLine());
-            addbook.Add(a.email);
-
-            // New person information
-            Console.WriteLine("\nGiven Detail Are : \n");
-            Console.WriteLine("First Name = " + addbook[0] + "\nLastt Name = " + addbook[1] + "\nAddress = " + addbook[2] + "\nCity = " + addbook[3] + "\nState = " + addbook[4] + "\nZip = " + addbook[5] + "\nPhone Number = " + addbook[6] + "\nEmail = " + addbook[7]);
-
-
+            Console.WriteLine("Enter number person detail you want to add");
+            int maxPerson =Convert.ToInt32( Console.ReadLine());
+            NewPersoncontact a = new NewPersoncontact();
+            a.NewPerson(maxPerson);
 
         }
     }
